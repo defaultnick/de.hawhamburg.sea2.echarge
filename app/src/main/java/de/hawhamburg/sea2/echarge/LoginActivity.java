@@ -42,7 +42,7 @@ import de.hawhamburg.sea2.echarge.library.UserFunctions;
  * well.
  */
 public class LoginActivity extends ActionBarActivity {
-    private static String netCheckUrl = "http://192.168.253.151/";
+    private static String netCheckUrl = "http://192.168.253.10/";
 
     /* Test fuers Speichern der Daten */
     private static String LoginDatei = "FirstActivity";
