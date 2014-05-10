@@ -4,6 +4,6 @@
     <string name="loginURL">http://192.168.253.10/ws/app_api/</string>
     <string name="forpassURL">http://192.168.253.10/ws/app_api/</string>
     <string name="chgpassURL">http://192.168.253.10/ws/app_api/</string>
-    <string name="netCheckUrl">http://192.168.253.10/</string>
+    <string name="netCheckUrl">http://192.168.253.10/saf</string>
 
 </resources>
