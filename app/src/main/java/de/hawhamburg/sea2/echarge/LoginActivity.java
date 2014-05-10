@@ -33,6 +33,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import de.hawhamburg.sea2.echarge.library.Consts;
 import de.hawhamburg.sea2.echarge.library.DatabaseHandler;
 import de.hawhamburg.sea2.echarge.library.UserFunctions;
 
@@ -42,16 +43,8 @@ import de.hawhamburg.sea2.echarge.library.UserFunctions;
  * well.
  */
 public class LoginActivity extends ActionBarActivity {
-    private static String netCheckUrl = "http://192.168.253.10/";
-
     /* Test fuers Speichern der Daten */
     private static String LoginDatei = "FirstActivity";
-    private static String string = "UserPass";
-
-    /**
-     * The default email to populate the email field with.
-     */
-    //public static final String EXTRA_EMAIL = "com.example.android.authenticatordemo.extra.EMAIL";
 
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -274,7 +267,7 @@ public class LoginActivity extends ActionBarActivity {
             NetworkInfo netInfo = cm.getActiveNetworkInfo();
             if (netInfo != null && netInfo.isConnected()) {
                 try {
-                    URL url = new URL(netCheckUrl);
+                    URL url = new URL(Consts.netCheckUrl);
                     HttpURLConnection urlc = (HttpURLConnection) url.openConnection();
                     urlc.setConnectTimeout(3000);
                     urlc.connect();

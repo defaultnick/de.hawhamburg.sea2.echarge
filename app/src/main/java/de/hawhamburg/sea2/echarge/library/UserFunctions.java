@@ -17,12 +17,6 @@ public class UserFunctions {
     private JSONParser jsonParser;
     //URL of the PHP API
 
-  //  private static String loginURL = "http://192.168.253.151/app_api/";
- //   private static String forpassURL = "http://192.168.253.151/app_api/";
- //   private static String chgpassURL = "http://192.168.253.151/app_api/";
-    private static String loginURL = "none";
-    private static String forpassURL = "none";
-    private static String chgpassURL = "none";
     private static String login_tag = "login";
     private static String forpass_tag = "forpass";
     private static String chgpass_tag = "chgpass";
@@ -40,7 +34,7 @@ public class UserFunctions {
         params.add(new BasicNameValuePair("tag", login_tag));
         params.add(new BasicNameValuePair("email", email));
         params.add(new BasicNameValuePair("password", password));
-        JSONObject json = jsonParser.getJSONFromUrl(loginURL, params);
+        JSONObject json = jsonParser.getJSONFromUrl(Consts.apiURL, params);
         return json;
     }
     /**
@@ -51,7 +45,7 @@ public class UserFunctions {
         params.add(new BasicNameValuePair("tag", chgpass_tag));
         params.add(new BasicNameValuePair("newpas", newpas));
         params.add(new BasicNameValuePair("email", email));
-        JSONObject json = jsonParser.getJSONFromUrl(chgpassURL, params);
+        JSONObject json = jsonParser.getJSONFromUrl(Consts.apiURL, params);
         return json;
     }
     /**
@@ -61,7 +55,7 @@ public class UserFunctions {
         List params = new ArrayList();
         params.add(new BasicNameValuePair("tag", forpass_tag));
         params.add(new BasicNameValuePair("forgotpassword", forgotpassword));
-        JSONObject json = jsonParser.getJSONFromUrl(forpassURL, params);
+        JSONObject json = jsonParser.getJSONFromUrl(Consts.apiURL, params);
         return json;
     }
 
