@@ -7,4 +7,5 @@ public class Consts {
     public static final String netCheckUrl = "http://192.168.253.10/ws/app_api/";
     public static final String apiURL = "http://192.168.253.10/ws/app_api/";
     public static final String LoginDatei = "FirstActivity";
+    public static final String LoginDatei1 = "FirstActivity";
 }
