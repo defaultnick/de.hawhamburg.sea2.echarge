@@ -18,6 +18,7 @@ public class MapsActivity extends FragmentActivity {
         setContentView(R.layout.activity_maps);
         setUpMapIfNeeded();
     }
+    
 
     @Override
     protected void onResume() {
