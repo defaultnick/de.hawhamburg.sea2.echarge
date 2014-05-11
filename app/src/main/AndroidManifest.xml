@@ -30,16 +30,7 @@
             android:label="@string/title_activity_main" />
         <activity
             android:name="de.hawhamburg.sea2.echarge.LoginActivity"
-            android:label="@string/title_activity_login">
-
-            <!--
-            android:parentActivityName="com.simis.testing3.MainActivity"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="MainActivity" />
-            -->
-        </activity>
+            android:label="@string/title_activity_login"></activity>
         <activity
             android:name="de.hawhamburg.sea2.echarge.SettingsActivity"
             android:label="@string/title_activity_settings"
@@ -66,7 +57,12 @@
         </activity>
         <activity
             android:name="de.hawhamburg.sea2.echarge.MapsActivity"
-            android:label="@string/title_activity_maps"></activity>
+            android:label="@string/title_activity_maps"
+            android:parentActivityName="de.hawhamburg.sea2.echarge.MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"

@@ -24,6 +24,6 @@
         <item>Anzeige der Tankstellen</item>
     </string-array>
 
-    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_maps">Tankstellen-Karte</string>
 
 </resources>
