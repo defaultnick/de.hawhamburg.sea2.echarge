@@ -1,19 +1,24 @@
 package de.hawhamburg.sea2.echarge;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
+import de.hawhamburg.sea2.echarge.library.Consts;
 import de.hawhamburg.sea2.echarge.library.MenuListAdapter;
 
 public class MainActivity extends ActionBarActivity {
@@ -81,7 +86,7 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         boolean drawerOpen = mDrawerLayout.isDrawerOpen(mDrawerList);
-        menu.findItem(R.id.action_kp).setVisible(!drawerOpen);
+        menu.findItem(R.id.action_recover_password).setVisible(!drawerOpen);
         return super.onPrepareOptionsMenu(menu);
     }
 
@@ -98,12 +103,27 @@ public class MainActivity extends ActionBarActivity {
 
         // Gibt den ActionBar-Buttons Funktionen
         switch (item.getItemId()) {
-            case R.id.action_kp:
-                // Tu' etwas!
-                return true;
+            case R.id.action_change_password:
+                Intent pc = new Intent(this, PasswordChange.class);
+                startActivity(pc);
+                //return true;
+            case R.id.action_recover_password:
+                Intent pr = new Intent(this, PasswordReset.class);
+                startActivity(pr);
+                // return true;
+            case R.id.action_login_reset:
+                deleteFile(Consts.LoginDatei);
+
+                Context context = getApplicationContext();
+                CharSequence text = "Login wurde zurückgesetzt!";
+                int duration = Toast.LENGTH_SHORT;
+
+                Toast toast = Toast.makeText(context, text, duration);
+                toast.show();
             default:
-                return super.onOptionsItemSelected(item);
+                break;
         }
+        return super.onOptionsItemSelected(item);
     }
 
     // Listener für die Navigation Drawer Einträge - Achtung: Zählung beginnt bei 0!

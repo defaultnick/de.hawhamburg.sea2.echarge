@@ -43,12 +43,6 @@ import de.hawhamburg.sea2.echarge.library.UserFunctions;
  * well.
  */
 public class LoginActivity extends ActionBarActivity {
-    /* Test fuers Speichern der Daten */
-    private static String LoginDatei = "FirstActivity";
-
-    /**
-     * Keep track of the login task to ensure we can cancel it if requested.
-     */
 
     // Values for email and password at the time of the login attempt.
     private String mEmail;
@@ -197,7 +191,7 @@ public class LoginActivity extends ActionBarActivity {
 
         FileInputStream inputStream = null;
         try {
-            inputStream = openFileInput(LoginDatei);
+            inputStream = openFileInput(Consts.LoginDatei);
             byte[] reader = new byte[inputStream.available()];
             while (inputStream.read(reader) != -1) {
             }
@@ -225,7 +219,7 @@ public class LoginActivity extends ActionBarActivity {
     private void LoginDatenSchreiben(String UserPass) {
         FileOutputStream outputStream = null;
         try {
-            outputStream = openFileOutput(LoginDatei, Context.MODE_PRIVATE);
+            outputStream = openFileOutput(Consts.LoginDatei, Context.MODE_PRIVATE);
             outputStream.write(UserPass.toString().getBytes());
         } catch(IOException e) {
             Log.e("log", e.getMessage());

@@ -8,8 +8,15 @@
         android:orderInCategory="100"
         app:showAsAction="never" />
 
-    <item android:id="@+id/action_kp"
+    <item
+        android:id="@+id/action_recover_password"
         android:title="@string/action_pass_reset"
         android:orderInCategory="100"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_login_reset"
+        android:title="@string/action_login_reset"
+        android:orderInCategory="150"
         app:showAsAction="never" />
 </menu>
