@@ -13,21 +13,19 @@
     </style>
 
     <!-- the theme applied to the application or activity -->
-    <style name="CustomActionBarTheme"
-        parent="@style/Theme.AppCompat.Light.DarkActionBar">
-        <item name="android:actionBarStyle">@style/MyRedActionBar</item>
+    <style name="CustomActionBarTheme" parent="@style/Theme.AppCompat.Light.DarkActionBar">
+        <item name="android:actionBarStyle">@style/MyBlueActionBar</item>
 
         <!-- Support library compatibility -->
-        <item name="actionBarStyle">@style/MyRedActionBar</item>
+        <item name="actionBarStyle">@style/MyBlueActionBar</item>
     </style>
 
     <!-- ActionBar styles -->
-    <style name="MyRedActionBar"
-        parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+    <style name="MyBlueActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
         <item name="android:background">#3399FD</item>
 
         <!-- Support library compatibility -->
         <!--  <item name="background">@drawable/actionbar_background</item> -->
-   </style>
+    </style>
 
 </resources>

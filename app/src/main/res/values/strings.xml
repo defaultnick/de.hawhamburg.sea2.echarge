@@ -5,25 +5,25 @@
     <string name="action_settings">Einstellungen</string>
     <string name="edit_hint">Dateien eingeben</string>
     <string name="title_activity_main">Auswahl</string>
-
     <string name="action_search">Suchen</string>
     <string name="action_compose">Erstellen</string>
     <string name="action_pass_reset">Passwort zurücksetzen</string>
     <string name="action_pass_change">Passwort ändern</string>
     <string name="action_login_reset">Login zurücksetzen</string>
-
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
     <string-array name="drawerTitles_array">
-        <item>Titel 1</item>
-        <item>Toller Titel 2</item>
-        <item>Mein dritter Titel</item>
+        <item>Info</item>
+        <item>Rechnungen</item>
+        <item>Karte</item>
     </string-array>
     <string-array name="drawerSubtitles_array">
-        <item>Untertitel 1</item>
-        <item>Toller Untertitel 2</item>
-        <item>Mein dritter Untertitel</item>
+        <item>Allgemeine Informationen</item>
+        <item>Zeige aktuelle Rechnungen</item>
+        <item>Anzeige der Tankstellen</item>
     </string-array>
+
+    <string name="title_activity_maps">Map</string>
 
 </resources>

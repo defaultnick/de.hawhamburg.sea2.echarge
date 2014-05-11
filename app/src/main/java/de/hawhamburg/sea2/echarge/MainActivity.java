@@ -47,7 +47,9 @@ public class MainActivity extends ActionBarActivity {
         // Hole die Untertitel aus einem Array aus der strings.xml
         drawerSubtitles = getResources().getStringArray(R.array.drawerSubtitles_array);
         // Setzt die Icons zu den Einträgen
-        drawerIcons = new int[] {android.R.drawable.ic_menu_info_details, android.R.drawable.ic_menu_edit, android.R.drawable.ic_menu_delete};
+        drawerIcons = new int[]{android.R.drawable.ic_menu_info_details,
+                android.R.drawable.ic_menu_info_details,
+                android.R.drawable.ic_menu_mapmode};
 
         // Erstellt den neuen MenuAdapter aus der Klasse MenuListAdapter
         MenuListAdapter mMenuAdapter = new MenuListAdapter(this, drawerTitles, drawerSubtitles, drawerIcons);
@@ -72,7 +74,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Bereitet die ActionBar auf den Navigation Drawer vor
         getActionBar().setDisplayHomeAsUpEnabled(true);
-        getActionBar().setHomeButtonEnabled(true);
+        //   getActionBar().setHomeButtonEnabled(true);
     }
 
     // Fügt das Menü hinzu / ActionBar Einträge
@@ -93,6 +95,10 @@ public class MainActivity extends ActionBarActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Öffnet und schließt den Navigation Drawer bei Klick auf den Titel/das Icon in der ActionBar
+        if (mDrawerToggle.onOptionsItemSelected(item)) {
+            return true;
+        }
+
         if (item.getItemId() == android.R.id.home) {
             if (mDrawerLayout.isDrawerOpen(mDrawerList)) {
                 mDrawerLayout.closeDrawer(mDrawerList);
@@ -106,11 +112,13 @@ public class MainActivity extends ActionBarActivity {
             case R.id.action_change_password:
                 Intent pc = new Intent(this, PasswordChange.class);
                 startActivity(pc);
-                //return true;
+                break;
+
             case R.id.action_recover_password:
                 Intent pr = new Intent(this, PasswordReset.class);
                 startActivity(pr);
-                // return true;
+                break;
+
             case R.id.action_login_reset:
                 deleteFile(Consts.LoginDatei);
 
@@ -120,6 +128,8 @@ public class MainActivity extends ActionBarActivity {
 
                 Toast toast = Toast.makeText(context, text, duration);
                 toast.show();
+                break;
+
             default:
                 break;
         }
@@ -130,12 +140,25 @@ public class MainActivity extends ActionBarActivity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            if (position == 0) {
-                // Aktion
-            } else if (position == 1) {
-                // Aktion
-            } else if (position == 2) {
-                // Aktion
+
+            Intent i;
+            switch (position) {
+                case 0: // Info
+                    i = new Intent(MainActivity.this, PasswordChange.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
+                    break;
+                case 1:  // Bills
+                    i = new Intent(MainActivity.this, PasswordReset.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
+                    break;
+
+                case 2:  // Map
+                    break;
+
+                default:
+                    break;
             }
 
             mDrawerList.setItemChecked(position, true);
@@ -143,7 +166,9 @@ public class MainActivity extends ActionBarActivity {
             getActionBar().setTitle(mTitle);
             mDrawerLayout.closeDrawer(mDrawerList);
         }
+
     }
+
 
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -175,7 +200,7 @@ public class MainActivity extends ActionBarActivity {
                 }
             }
         };
-        // your code.
+
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setMessage("Möchten Sie die Anwendung wirklich beenden?").setPositiveButton("Ja", dialogClickListener)
                 .setNegativeButton("Nein", dialogClickListener).show();
