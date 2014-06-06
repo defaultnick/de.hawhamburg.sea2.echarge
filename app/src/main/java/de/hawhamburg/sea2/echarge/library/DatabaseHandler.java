@@ -107,14 +107,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         if(cursor.getCount() > 0){
             user.put("fname", cursor.getString(cursor.getColumnIndex(KEY_FIRSTNAME)));
             user.put("lname", cursor.getString(cursor.getColumnIndex(KEY_LASTNAME)));
-            user.put("birthday", cursor.getString(cursor.getColumnIndex(KEY_EMAIL)));
-            user.put("street", cursor.getString(cursor.getColumnIndex(KEY_BIRTHDAY)));
+            user.put("birthday", cursor.getString(cursor.getColumnIndex(KEY_BIRTHDAY)));
+            user.put("street", cursor.getString(cursor.getColumnIndex(KEY_STREET)));
             user.put("number", cursor.getString(cursor.getColumnIndex(KEY_NUMBER)));
-            user.put("plz", cursor.getString(cursor.getColumnIndex(KEY_NUMBER)));
-            user.put("city", cursor.getString(cursor.getColumnIndex(KEY_PLZ)));
-            user.put("country", cursor.getString(cursor.getColumnIndex(KEY_CITY)));
-            user.put("mobile", cursor.getString(cursor.getColumnIndex(KEY_COUNTRY)));
-            user.put("email", cursor.getString(cursor.getColumnIndex(KEY_MOBILE)));
+            user.put("plz", cursor.getString(cursor.getColumnIndex(KEY_PLZ)));
+            user.put("city", cursor.getString(cursor.getColumnIndex(KEY_CITY)));
+            user.put("country", cursor.getString(cursor.getColumnIndex(KEY_COUNTRY)));
+            user.put("mobile", cursor.getString(cursor.getColumnIndex(KEY_MOBILE)));
+            user.put("email", cursor.getString(cursor.getColumnIndex(KEY_EMAIL)));
             user.put("uname", cursor.getString(cursor.getColumnIndex(KEY_USERNAME)));
             user.put("uid", cursor.getString(cursor.getColumnIndex(KEY_UID)));
             user.put("created_at", cursor.getString(cursor.getColumnIndex(KEY_CREATED_AT)));

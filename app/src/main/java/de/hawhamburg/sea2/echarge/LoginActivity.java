@@ -329,6 +329,7 @@ public class LoginActivity extends ActionBarActivity {
 
                         ShowDialog("Lade Benutzer", "Daten holen...", false);
                         DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+                        db.resetTables();
                         JSONObject json_user = json.getJSONObject("user");
                         /**
                          * Clear all previous data in SQlite database.
@@ -336,6 +337,7 @@ public class LoginActivity extends ActionBarActivity {
                         //   UserFunctions logout = new UserFunctions();
                         //  logout.logoutUser(getApplicationContext());
                         // db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
+                        System.err.println(json_user.getString(KEY_FIRSTNAME));
                         db.addUser(json_user.getString(KEY_FIRSTNAME),
                                 json_user.getString(KEY_LASTNAME),
                                 json_user.getString(KEY_EMAIL),
