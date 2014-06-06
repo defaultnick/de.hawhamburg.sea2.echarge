@@ -144,7 +144,9 @@ public class MainActivity extends ActionBarActivity {
             Intent i;
             switch (position) {
                 case 0: // Info
-
+                    i = new Intent(MainActivity.this, InfoActivity.class);
+                    i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(i);
                     break;
                 case 1:  // Bills
                /*     i = new Intent(MainActivity.this, PasswordReset.class);

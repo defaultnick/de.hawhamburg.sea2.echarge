@@ -25,5 +25,7 @@
     </string-array>
 
     <string name="title_activity_maps">Tankstellen-Karte</string>
+    <string name="title_activity_info">InfoActivity</string>
+    <string name="hello_world">Hello world!</string>
 
 </resources>

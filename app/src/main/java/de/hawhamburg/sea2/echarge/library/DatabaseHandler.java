@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
+import java.util.Date;
 import java.util.HashMap;
 
 /**
@@ -27,9 +28,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_USERNAME = "uname";
     private static final String KEY_UID = "uid";
     private static final String KEY_CREATED_AT = "created_at";
+    private static final String KEY_BIRTHDAY = "birthday";
+    private static final String KEY_STREET = "street";
+    private static final String KEY_NUMBER = "number";
+    private static final String KEY_PLZ = "plz";
+    private static final String KEY_CITY = "city";
+    private static final String KEY_COUNTRY = "country";
+    private static final String KEY_MOBILE = "mobile";
+
+
+    // Constructor
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
+
     // Creating Tables
     @Override
     public void onCreate(SQLiteDatabase db) {
@@ -37,6 +49,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY,"
                 + KEY_FIRSTNAME + " TEXT,"
                 + KEY_LASTNAME + " TEXT,"
+                + KEY_BIRTHDAY + " TEXT,"
+                + KEY_STREET + " TEXT,"
+                + KEY_NUMBER + " TEXT,"
+                + KEY_PLZ + " TEXT,"
+                + KEY_CITY + " TEXT,"
+                + KEY_COUNTRY + " TEXT,"
+                + KEY_MOBILE + " TEXT,"
                 + KEY_EMAIL + " TEXT UNIQUE,"
                 + KEY_USERNAME + " TEXT,"
                 + KEY_UID + " TEXT,"
@@ -54,12 +73,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * Storing user details in database
      * */
-    public void addUser(String fname, String lname, String email, String uname, String uid, String created_at) {
+    public void addUser(String fname, String lname, String email, String birthday, String street, String number, String plz,
+                        String city, String country, String mobile, String uname, String uid, String created_at) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_FIRSTNAME, fname); // FirstName
         values.put(KEY_LASTNAME, lname); // LastName
         values.put(KEY_EMAIL, email); // Email
+        values.put(KEY_BIRTHDAY, birthday); // Geburtsdatum
+        values.put(KEY_STREET, street); // Straße
+        values.put(KEY_NUMBER, number); // Hausnummer
+        values.put(KEY_PLZ, plz); // Postleitzahl
+        values.put(KEY_CITY, city); // Stadt
+        values.put(KEY_COUNTRY, country); // Land
+        values.put(KEY_MOBILE, mobile); // Handynummer
         values.put(KEY_USERNAME, uname); // UserName
         values.put(KEY_UID, uid); // Email
         values.put(KEY_CREATED_AT, created_at); // Created At
@@ -78,12 +105,20 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // Move to first row
         cursor.moveToFirst();
         if(cursor.getCount() > 0){
-            user.put("fname", cursor.getString(1));
-            user.put("lname", cursor.getString(2));
-            user.put("email", cursor.getString(3));
-            user.put("uname", cursor.getString(4));
-            user.put("uid", cursor.getString(5));
-            user.put("created_at", cursor.getString(6));
+            user.put("fname", cursor.getString(cursor.getColumnIndex(KEY_FIRSTNAME)));
+            user.put("lname", cursor.getString(cursor.getColumnIndex(KEY_LASTNAME)));
+            user.put("birthday", cursor.getString(cursor.getColumnIndex(KEY_EMAIL)));
+            user.put("street", cursor.getString(cursor.getColumnIndex(KEY_BIRTHDAY)));
+            user.put("number", cursor.getString(cursor.getColumnIndex(KEY_NUMBER)));
+            user.put("plz", cursor.getString(cursor.getColumnIndex(KEY_NUMBER)));
+            user.put("city", cursor.getString(cursor.getColumnIndex(KEY_PLZ)));
+            user.put("country", cursor.getString(cursor.getColumnIndex(KEY_CITY)));
+            user.put("mobile", cursor.getString(cursor.getColumnIndex(KEY_COUNTRY)));
+            user.put("email", cursor.getString(cursor.getColumnIndex(KEY_MOBILE)));
+            user.put("uname", cursor.getString(cursor.getColumnIndex(KEY_USERNAME)));
+            user.put("uid", cursor.getString(cursor.getColumnIndex(KEY_UID)));
+            user.put("created_at", cursor.getString(cursor.getColumnIndex(KEY_CREATED_AT)));
+
         }
         cursor.close();
         db.close();

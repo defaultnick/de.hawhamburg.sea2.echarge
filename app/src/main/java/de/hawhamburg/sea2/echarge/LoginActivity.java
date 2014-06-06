@@ -71,6 +71,14 @@ public class LoginActivity extends ActionBarActivity {
     private static String KEY_EMAIL = "email";
     private static String KEY_CREATED_AT = "created_at";
 
+    private static String KEY_BIRTHDAY = "birthday";
+    private static String KEY_STREET = "street";
+    private static String KEY_NUMBER = "number";
+    private static String KEY_PLZ = "plz";
+    private static String KEY_CITY = "city";
+    private static String KEY_COUNTRY = "country";
+    private static String KEY_MOBILE = "mobile";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -325,9 +333,23 @@ public class LoginActivity extends ActionBarActivity {
                         /**
                          * Clear all previous data in SQlite database.
                          **/
-                        UserFunctions logout = new UserFunctions();
-                        logout.logoutUser(getApplicationContext());
-                        db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
+                        //   UserFunctions logout = new UserFunctions();
+                        //  logout.logoutUser(getApplicationContext());
+                        // db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
+                        db.addUser(json_user.getString(KEY_FIRSTNAME),
+                                json_user.getString(KEY_LASTNAME),
+                                json_user.getString(KEY_EMAIL),
+                                json_user.getString(KEY_BIRTHDAY),
+                                json_user.getString(KEY_STREET),
+                                json_user.getString(KEY_NUMBER),
+                                json_user.getString(KEY_PLZ),
+                                json_user.getString(KEY_CITY),
+                                json_user.getString(KEY_COUNTRY),
+                                json_user.getString(KEY_MOBILE),
+                                json_user.getString(KEY_USERNAME),
+                                json_user.getString(KEY_UID),
+                                json_user.getString(KEY_CREATED_AT));
+
                         /**
                          *If JSON array details are stored in SQlite it launches the User Panel.
                          **/
