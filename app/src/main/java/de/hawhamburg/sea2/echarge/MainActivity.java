@@ -60,14 +60,14 @@ public class MainActivity extends ActionBarActivity {
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
             public void onDrawerClosed(View view) {
                 getActionBar().setTitle(mTitle);
-            //    invalidateOptionsMenu();
+                //    invalidateOptionsMenu();
                 //supportInvalidateOptionsMenu();
             }
 
             public void onDrawerOpened(View drawerView) {
                 getActionBar().setTitle(R.string.app_name);
-             //   invalidateOptionsMenu();
-             //   supportInvalidateOptionsMenu();
+                //   invalidateOptionsMenu();
+                //   supportInvalidateOptionsMenu();
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
@@ -147,9 +147,9 @@ public class MainActivity extends ActionBarActivity {
 
                     break;
                 case 1:  // Bills
-                    i = new Intent(MainActivity.this, PasswordReset.class);
+               /*     i = new Intent(MainActivity.this, PasswordReset.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(i);
+                    startActivity(i); */
                     break;
 
                 case 2:  // Map
@@ -184,13 +184,12 @@ public class MainActivity extends ActionBarActivity {
     }
 
 
-
     @Override
     public void onBackPressed() {
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                switch (which){
+                switch (which) {
                     case DialogInterface.BUTTON_POSITIVE:
                         System.exit(0);
                         break;
