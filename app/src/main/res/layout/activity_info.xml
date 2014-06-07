@@ -16,7 +16,8 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -26,7 +27,9 @@
         android:layout_below="@+id/viewVorname"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -36,7 +39,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewNachname"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -46,7 +51,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewGebDatum"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -56,7 +63,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewStrasse"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -66,7 +75,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewHausnummer"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -76,7 +87,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewPLZ"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -86,7 +99,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewStadt"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -96,7 +111,9 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewLand"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="20dp"
+        android:textStyle="bold"
+        android:textSize="20dp" />
 
     <TextView
         android:layout_width="fill_parent"
@@ -106,7 +123,130 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/viewEmail"
         android:layout_alignParentLeft="true"
-        android:layout_marginTop="10dp"
-        android:phoneNumber="true" />
+        android:layout_marginTop="20dp"
+        android:phoneNumber="true"
+        android:textStyle="bold"
+        android:textSize="20dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Vorname"
+        android:id="@+id/testVorname"
+        android:layout_below="@+id/viewVorname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Nachname"
+        android:id="@+id/textNachname"
+        android:layout_below="@+id/viewNachname"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Geburtsdatum"
+        android:id="@+id/textGeburtstag"
+        android:layout_below="@+id/viewGebDatum"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Straße"
+        android:id="@+id/textStrasse"
+        android:layout_below="@+id/viewStrasse"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Hausnummer"
+        android:id="@+id/textHausnummer"
+        android:layout_below="@+id/viewHausnummer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Postleitzahl"
+        android:id="@+id/textPLZ"
+        android:layout_below="@+id/viewPLZ"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Stadt"
+        android:id="@+id/textStadt"
+        android:layout_below="@+id/viewStadt"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:singleLine="false"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Land"
+        android:id="@+id/textLand"
+        android:layout_below="@+id/viewLand"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="eMail"
+        android:id="@+id/textEmail"
+        android:layout_below="@+id/viewEmail"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Handynummer"
+        android:id="@+id/textHandynummer"
+        android:layout_below="@+id/viewHandynummer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:textColor="#2db7ff"
+        android:textStyle="italic" />
 
 </RelativeLayout>

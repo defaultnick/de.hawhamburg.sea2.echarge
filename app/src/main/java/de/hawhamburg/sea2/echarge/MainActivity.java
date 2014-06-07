@@ -16,9 +16,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.HashMap;
+
 import de.hawhamburg.sea2.echarge.library.Consts;
+import de.hawhamburg.sea2.echarge.library.DatabaseHandler;
 import de.hawhamburg.sea2.echarge.library.MenuListAdapter;
 
 public class MainActivity extends ActionBarActivity {
@@ -26,6 +30,7 @@ public class MainActivity extends ActionBarActivity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mTitle;
+    private TextView tvBegruessungName;
 
     private String[] drawerTitles;
     private String[] drawerSubtitles;
@@ -71,6 +76,12 @@ public class MainActivity extends ActionBarActivity {
             }
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
+
+        // Soll in der Main Activity als Begruessung den Vornamen aus der Datenbank lesen
+        DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+        HashMap hm = db.getUserDetails();
+        tvBegruessungName = (TextView) findViewById(R.id.viewBegruessungName);
+        tvBegruessungName.setText((String) hm.get("fname"));
 
         // Bereitet die ActionBar auf den Navigation Drawer vor
         getActionBar().setDisplayHomeAsUpEnabled(true);
