@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!-- The main content view -->
-    <FrameLayout
+    <RelativeLayout
         android:id="@+id/content_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
@@ -11,27 +11,53 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Herzlich Willkommen"
-            android:id="@+id/textBegruessung"
-            android:layout_gravity="center"
-            android:textSize="30dp"
+            android:id="@+id/viewBegruessung"
+            android:textSize="25dp"
             android:textStyle="bold"
             android:textColor="#2db7ff"
-            android:visibility="visible" />
+            android:layout_above="@+id/viewBegruessungName"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="false" />
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="230dp"
-            android:text="Text View"
+            android:layout_height="wrap_content"
+            android:text="in der offiziellen eCharge-App"
             android:id="@+id/viewBegruessungName"
-            android:layout_gravity="center_horizontal|bottom"
-            android:textStyle="bold"
-            android:textSize="30dp"
             android:textColor="#2db7ff"
-            android:visibility="visible" />
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
 
-    </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Sie sind eingeloggt als: "
+            android:id="@+id/viewEingeloggtAls"
+            android:textColor="#2db7ff"
+            android:textSize="18dp"
+            android:textStyle="bold"
+            android:layout_marginTop="34dp"
+            android:layout_below="@+id/viewBegruessungName"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Text"
+            android:id="@+id/viewVorNachname"
+            android:textSize="18dp"
+            android:textColor="#2db7ff"
+            android:textStyle="bold"
+            android:layout_below="@+id/viewEingeloggtAls"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
     <!-- The navigation drawer -->
     <ListView
         android:id="@+id/left_drawer"

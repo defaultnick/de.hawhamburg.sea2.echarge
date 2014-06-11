@@ -30,7 +30,8 @@ public class MainActivity extends ActionBarActivity {
     private ListView mDrawerList;
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mTitle;
-    private TextView tvBegruessungName;
+//    private TextView tvBegruessungName;
+    private TextView viewVornameNachname;
 
     private String[] drawerTitles;
     private String[] drawerSubtitles;
@@ -77,11 +78,14 @@ public class MainActivity extends ActionBarActivity {
         };
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
-        // Soll in der Main Activity als Begruessung den Vornamen aus der Datenbank lesen
+
+        //  Soll in der Main Activity als Begruessung den Vornamen aus der Datenbank lesen
         DatabaseHandler db = new DatabaseHandler(getApplicationContext());
         HashMap hm = db.getUserDetails();
-        tvBegruessungName = (TextView) findViewById(R.id.viewBegruessungName);
-        tvBegruessungName.setText((String) hm.get("fname"));
+        viewVornameNachname = (TextView) findViewById(R.id.viewVorNachname);
+        viewVornameNachname.setText((String) (hm.get("fname") + " " + hm.get("lname")) );
+        //  tvBegruessungName = (TextView) findViewById(R.id.viewBegruessungName);
+        //  tvBegruessungName.setText((String) hm.get("fname"));
 
         // Bereitet die ActionBar auf den Navigation Drawer vor
         getActionBar().setDisplayHomeAsUpEnabled(true);
