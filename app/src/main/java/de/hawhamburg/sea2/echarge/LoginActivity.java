@@ -79,6 +79,7 @@ public class LoginActivity extends ActionBarActivity {
     private static String KEY_MOBILE = "mobile";
     private static String KEY_GESAMTSUMME = "gesamtsumme";
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

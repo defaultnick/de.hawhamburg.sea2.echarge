@@ -11,6 +11,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Herzlich Willkommen"
             android:id="@+id/viewBegruessung"
@@ -25,6 +26,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="in der offiziellen eCharge-App"
             android:id="@+id/viewBegruessungName"
             android:textColor="#2db7ff"
@@ -36,6 +38,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Sie sind eingeloggt als: "
             android:id="@+id/viewEingeloggtAls"
@@ -49,6 +52,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="New Text"
             android:id="@+id/viewVorNachname"
             android:textSize="18dp"

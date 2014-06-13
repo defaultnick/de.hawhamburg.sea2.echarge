@@ -61,7 +61,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_USERNAME + " TEXT,"
                 + KEY_UID + " TEXT,"
                 + KEY_CREATED_AT + " TEXT,"
-                + KEY_GESAMTSUMME + "TEXT" + ")";
+                + KEY_GESAMTSUMME + " TEXT" + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
     }
     // Upgrading database
