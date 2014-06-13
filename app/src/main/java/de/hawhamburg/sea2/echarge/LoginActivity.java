@@ -70,7 +70,6 @@ public class LoginActivity extends ActionBarActivity {
     private static String KEY_LASTNAME = "lname";
     private static String KEY_EMAIL = "email";
     private static String KEY_CREATED_AT = "created_at";
-
     private static String KEY_BIRTHDAY = "birthday";
     private static String KEY_STREET = "street";
     private static String KEY_NUMBER = "number";
@@ -78,6 +77,7 @@ public class LoginActivity extends ActionBarActivity {
     private static String KEY_CITY = "city";
     private static String KEY_COUNTRY = "country";
     private static String KEY_MOBILE = "mobile";
+    private static String KEY_GESAMTSUMME = "gesamtsumme";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -337,6 +337,7 @@ public class LoginActivity extends ActionBarActivity {
                         //   UserFunctions logout = new UserFunctions();
                         //  logout.logoutUser(getApplicationContext());
                         // db.addUser(json_user.getString(KEY_FIRSTNAME),json_user.getString(KEY_LASTNAME),json_user.getString(KEY_EMAIL),json_user.getString(KEY_USERNAME),json_user.getString(KEY_UID),json_user.getString(KEY_CREATED_AT));
+
                         System.err.println(json_user.getString(KEY_FIRSTNAME));
                         db.addUser(json_user.getString(KEY_FIRSTNAME),
                                 json_user.getString(KEY_LASTNAME),
@@ -350,8 +351,8 @@ public class LoginActivity extends ActionBarActivity {
                                 json_user.getString(KEY_MOBILE),
                                 json_user.getString(KEY_USERNAME),
                                 json_user.getString(KEY_UID),
-                                json_user.getString(KEY_CREATED_AT));
-
+                                json_user.getString(KEY_CREATED_AT),
+                                json_user.getString(KEY_GESAMTSUMME));
                         /**
                          *If JSON array details are stored in SQlite it launches the User Panel.
                          **/

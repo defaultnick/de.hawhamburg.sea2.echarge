@@ -26,6 +26,7 @@
 
     <string name="title_activity_maps">Tankstellen-Karte</string>
     <string name="title_activity_info">Info</string>
+    <string name="title_activity_bill">Rechnungen</string>
     <string name="hello_world">Hello world!</string>
 
 </resources>

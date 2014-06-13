@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.hawhamburg.sea2.echarge"
     android:versionCode="1"
-    android:versionName="1.0">
+    android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -12,13 +12,14 @@
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/title_activity_main"
-        android:theme="@style/CustomActionBarTheme">
-        <!--  android:label="@string/app_name" -->
+        android:theme="@style/CustomActionBarTheme" >
+
+        <!-- android:label="@string/app_name" -->
         <!-- android:theme="@style/AppTheme" > -->
         <activity
-            android:name=".SplashActivity"
+            android:name="de.hawhamburg.sea2.echarge.SplashActivity"
             android:label="@string/app_name"
-            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen">
+            android:theme="@android:style/Theme.Black.NoTitleBar.Fullscreen" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,40 +27,40 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".MainActivity"
+            android:name="de.hawhamburg.sea2.echarge.MainActivity"
             android:label="@string/title_activity_main" />
         <activity
-            android:name=".LoginActivity"
+            android:name="de.hawhamburg.sea2.echarge.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name=".SettingsActivity"
+            android:name="de.hawhamburg.sea2.echarge.SettingsActivity"
             android:label="@string/title_activity_settings"
-            android:parentActivityName=".MainActivity">
-        <meta-data
+            android:parentActivityName="de.hawhamburg.sea2.echarge.MainActivity" >
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
         </activity>
         <activity
-            android:name=".PasswordReset"
+            android:name="de.hawhamburg.sea2.echarge.PasswordReset"
             android:label="@string/action_pass_reset"
-            android:parentActivityName=".LoginActivity">
-        <meta-data
+            android:parentActivityName="de.hawhamburg.sea2.echarge.LoginActivity" >
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="LoginActivity" />
         </activity>
         <activity
-            android:name=".PasswordChange"
+            android:name="de.hawhamburg.sea2.echarge.PasswordChange"
             android:label="@string/action_pass_change"
-            android:parentActivityName=".MainActivity">
-        <meta-data
+            android:parentActivityName="de.hawhamburg.sea2.echarge.MainActivity" >
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
         </activity>
         <activity
-            android:name=".MapsActivity"
+            android:name="de.hawhamburg.sea2.echarge.MapsActivity"
             android:label="@string/title_activity_maps"
-            android:parentActivityName=".MainActivity">
-        <meta-data
+            android:parentActivityName="de.hawhamburg.sea2.echarge.MainActivity" >
+            <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="MainActivity" />
         </activity>
@@ -72,16 +73,28 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".InfoActivity"
+            android:name="de.hawhamburg.sea2.echarge.InfoActivity"
             android:label="@string/title_activity_info"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName="de.hawhamburg.sea2.echarge.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
 
+        <activity
+            android:name="de.hawhamburg.sea2.echarge.BillActivity"
+            android:label="@string/title_activity_bill"
+            android:parentActivityName="de.hawhamburg.sea2.echarge.MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="MainActivity" />
+        </activity>
     </application>
 
     <!-- Allow to connect with internet -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <!--

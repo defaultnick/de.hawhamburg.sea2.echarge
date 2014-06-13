@@ -30,6 +30,7 @@ public class InfoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_info);
 
+
         tvFNAME = (TextView) findViewById(R.id.viewVorname);
         tvLASTNAME = (TextView) findViewById(R.id.viewNachname);
         tvBIRTHDAY = (TextView) findViewById(R.id.viewGebDatum);

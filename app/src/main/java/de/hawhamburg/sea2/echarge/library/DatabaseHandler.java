@@ -35,6 +35,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String KEY_CITY = "city";
     private static final String KEY_COUNTRY = "country";
     private static final String KEY_MOBILE = "mobile";
+    private static final String KEY_GESAMTSUMME = "gesamtsumme";
 
 
     // Constructor
@@ -59,7 +60,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 + KEY_EMAIL + " TEXT UNIQUE,"
                 + KEY_USERNAME + " TEXT,"
                 + KEY_UID + " TEXT,"
-                + KEY_CREATED_AT + " TEXT" + ")";
+                + KEY_CREATED_AT + " TEXT,"
+                + KEY_GESAMTSUMME + "TEXT" + ")";
         db.execSQL(CREATE_LOGIN_TABLE);
     }
     // Upgrading database
@@ -73,8 +75,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     /**
      * Storing user details in database
      * */
-    public void addUser(String fname, String lname, String email, String birthday, String street, String number, String plz,
-                        String city, String country, String mobile, String uname, String uid, String created_at) {
+
+    // String gesamtsumme
+
+     public void addUser(String fname, String lname, String email, String birthday, String street, String number, String plz,
+                        String city, String country, String mobile, String uname, String uid, String created_at, String gesamtsumme) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_FIRSTNAME, fname); // FirstName
@@ -90,6 +95,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_USERNAME, uname); // UserName
         values.put(KEY_UID, uid); // Email
         values.put(KEY_CREATED_AT, created_at); // Created At
+        values.put(KEY_GESAMTSUMME, gesamtsumme); // Gesamte Rechnungssumme
         // Inserting Row
         db.insert(TABLE_LOGIN, null, values);
         db.close(); // Closing database connection
@@ -118,6 +124,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             user.put("uname", cursor.getString(cursor.getColumnIndex(KEY_USERNAME)));
             user.put("uid", cursor.getString(cursor.getColumnIndex(KEY_UID)));
             user.put("created_at", cursor.getString(cursor.getColumnIndex(KEY_CREATED_AT)));
+            user.put("gesamtsumme", cursor.getString(cursor.getColumnIndex(KEY_GESAMTSUMME)));
 
         }
         cursor.close();

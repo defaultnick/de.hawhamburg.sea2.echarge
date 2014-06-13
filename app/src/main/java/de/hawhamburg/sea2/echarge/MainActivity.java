@@ -82,6 +82,7 @@ public class MainActivity extends ActionBarActivity {
         //  Soll in der Main Activity als Begruessung den Vornamen aus der Datenbank lesen
         DatabaseHandler db = new DatabaseHandler(getApplicationContext());
         HashMap hm = db.getUserDetails();
+
         viewVornameNachname = (TextView) findViewById(R.id.viewVorNachname);
         viewVornameNachname.setText((String) (hm.get("fname") + " " + hm.get("lname")) );
         //  tvBegruessungName = (TextView) findViewById(R.id.viewBegruessungName);
@@ -164,9 +165,9 @@ public class MainActivity extends ActionBarActivity {
                     startActivity(i);
                     break;
                 case 1:  // Bills
-               /*     i = new Intent(MainActivity.this, PasswordReset.class);
+                    i = new Intent(MainActivity.this, BillActivity.class);
                     i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                    startActivity(i); */
+                    startActivity(i);
                     break;
 
                 case 2:  // Map
